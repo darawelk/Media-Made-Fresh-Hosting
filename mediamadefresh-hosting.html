@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Hosting Services | Media Made Fresh</title>
+<meta name="description" content="Fully managed website hosting from Media Made Fresh: 24/7/365 monitoring, a direct line to your account manager, 2-hour response, and 100% renewable-energy hosting on Google Cloud.">
+<style>
+  :root{
+    --mmf-black:#0a0a0a;
+    --mmf-white:#ffffff;
+    --mmf-orange:#f28107;
+    --mmf-orange-dark:#d06f04;
+    --mmf-gray-50:#f7f7f8;
+    --mmf-gray-100:#eeeeef;
+    --mmf-gray-300:#c9c9cc;
+    --mmf-gray-600:#5b5b60;
+    --mmf-green:#2e8b4f;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(10,10,10,0.08);
+    --heading-font:'Poppins','Futura','Helvetica Neue',Arial,sans-serif;
+    --body-font:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--body-font);
+    color:var(--mmf-black);
+    background:var(--mmf-white);
+    line-height:1.6;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{
+    font-family:var(--heading-font);
+    font-weight:700;
+    line-height:1.15;
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 16px;color:var(--mmf-gray-600);}
+  .eyebrow{
+    display:inline-block;
+    font-family:var(--heading-font);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--mmf-orange);
+    margin-bottom:14px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--heading-font);
+    font-weight:700;
+    font-size:15px;
+    padding:14px 28px;
+    border-radius:999px;
+    border:2px solid var(--mmf-orange);
+    background:var(--mmf-orange);
+    color:var(--mmf-black);
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--mmf-orange-dark);border-color:var(--mmf-orange-dark);transform:translateY(-1px);box-shadow:var(--shadow);}
+  .btn.btn-outline{background:transparent;color:var(--mmf-black);border-color:var(--mmf-black);}
+  .btn.btn-outline:hover{background:var(--mmf-black);color:var(--mmf-white);border-color:var(--mmf-black);}
+  .btn.btn-white{background:var(--mmf-white);color:var(--mmf-black);border-color:var(--mmf-white);}
+  .btn.btn-white:hover{background:var(--mmf-gray-100);}
+
+  /* Header */
+  header.site-header{
+    border-bottom:1px solid var(--mmf-gray-100);
+    position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);z-index:50;
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto;}
+  .logo img{height:42px;width:auto;}
+  nav.primary-nav{display:flex;align-items:center;gap:28px;}
+  nav.primary-nav a{font-family:var(--heading-font);font-weight:600;font-size:14px;color:var(--mmf-black);}
+  nav.primary-nav a.current{color:var(--mmf-orange);}
+  .header-cta{display:flex;align-items:center;gap:18px;}
+  .phone-pill{display:flex;align-items:center;gap:8px;font-family:var(--heading-font);font-weight:700;font-size:14px;}
+  .phone-pill svg{flex:none;}
+  @media (max-width:860px){
+    nav.primary-nav{display:none;}
+  }
+
+  /* Breadcrumb */
+  .breadcrumb{padding:14px 0;font-size:13px;color:var(--mmf-gray-600);}
+  .breadcrumb a{color:var(--mmf-gray-600);}
+  .breadcrumb a:hover{color:var(--mmf-orange);}
+
+  /* Hero */
+  .hero{padding:56px 0 64px;background:linear-gradient(180deg,var(--mmf-gray-50) 0%, var(--mmf-white) 100%);}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .hero h1{font-size:44px;}
+  .hero p.lead{font-size:18px;max-width:520px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+  .hero-note{margin-top:18px;font-size:13px;color:var(--mmf-gray-600);}
+  .hero-panel{
+    background:var(--mmf-black);
+    color:var(--mmf-white);
+    border-radius:var(--radius);
+    padding:32px;
+    box-shadow:var(--shadow);
+  }
+  .hero-panel h3{color:var(--mmf-white);font-size:18px;margin-bottom:18px;}
+  .hero-stat{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);}
+  .hero-stat:first-of-type{border-top:none;}
+  .hero-stat .num{font-family:var(--heading-font);font-weight:700;color:var(--mmf-orange);font-size:20px;min-width:64px;}
+  .hero-stat .label{font-size:14px;color:rgba(255,255,255,.85);margin:0;}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:34px;}
+  }
+
+  /* Feature section */
+  .section{padding:72px 0;}
+  .section-head{max-width:680px;margin:0 auto 44px;text-align:center;}
+  .section-head h2{font-size:32px;}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .feature-card{
+    border:1px solid var(--mmf-gray-100);
+    border-radius:var(--radius);
+    padding:28px 24px;
+    background:var(--mmf-white);
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .feature-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+  .feature-icon{
+    width:46px;height:46px;border-radius:12px;background:rgba(242,129,7,.12);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .feature-card h3{font-size:18px;margin-bottom:8px;}
+  .feature-card p{font-size:14.5px;margin:0;}
+  @media (max-width:900px){.features-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.features-grid{grid-template-columns:1fr;}}
+
+  /* Green / Google Cloud band */
+  .band{background:var(--mmf-black);color:var(--mmf-white);padding:64px 0;}
+  .band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .band h2{color:var(--mmf-white);font-size:30px;}
+  .band p{color:rgba(255,255,255,.75);}
+  .band-badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;}
+  .badge{
+    display:flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:999px;padding:10px 18px;font-size:13.5px;font-weight:600;font-family:var(--heading-font);
+  }
+  .badge svg{flex:none;}
+  .band-visual{
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.12);
+    padding:28px;
+  }
+  .band-visual ul{list-style:none;margin:0;padding:0;}
+  .band-visual li{display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);font-size:14.5px;color:rgba(255,255,255,.85);}
+  .band-visual li:first-child{border-top:none;}
+  @media (max-width:860px){.band .wrap{grid-template-columns:1fr;}}
+
+  /* Pricing */
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  .plan{
+    border:1px solid var(--mmf-gray-100);
+    border-radius:var(--radius);
+    padding:32px 26px;
+    display:flex;flex-direction:column;
+    background:var(--mmf-white);
+    position:relative;
+  }
+  .plan.featured{
+    border-color:var(--mmf-orange);
+    box-shadow:var(--shadow);
+    transform:translateY(-6px);
+  }
+  .plan-badge{
+    position:absolute;top:-13px;left:26px;
+    background:var(--mmf-orange);color:var(--mmf-black);
+    font-family:var(--heading-font);font-weight:700;font-size:12px;
+    padding:5px 14px;border-radius:999px;letter-spacing:.03em;
+  }
+  .plan h3{font-size:20px;margin-bottom:4px;}
+  .plan .plan-sub{font-size:13.5px;color:var(--mmf-gray-600);margin-bottom:18px;}
+  .plan .price{display:flex;align-items:baseline;gap:6px;margin-bottom:4px;}
+  .plan .price .amount{font-family:var(--heading-font);font-weight:700;font-size:38px;}
+  .plan .price .period{font-size:14px;color:var(--mmf-gray-600);}
+  .plan .price-note{font-size:12.5px;color:var(--mmf-gray-600);margin-bottom:22px;}
+  .plan ul{list-style:none;margin:0 0 26px;padding:0;flex:1;}
+  .plan li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14.5px;padding:9px 0;border-top:1px solid var(--mmf-gray-100);
+  }
+  .plan li:first-child{border-top:none;}
+  .plan li svg{flex:none;margin-top:2px;}
+  .plan .btn{justify-content:center;width:100%;}
+  @media (max-width:900px){.pricing-grid{grid-template-columns:1fr;}.plan.featured{transform:none;}}
+
+  .pricing-footnote{text-align:center;font-size:13.5px;color:var(--mmf-gray-600);margin-top:28px;}
+
+  /* Included-with-every-plan strip */
+  .included-strip{background:var(--mmf-gray-50);border-radius:var(--radius);padding:28px 30px;margin-top:40px;display:flex;flex-wrap:wrap;gap:22px 34px;align-items:center;justify-content:space-between;}
+  .included-strip .included-title{font-family:var(--heading-font);font-weight:700;font-size:14px;}
+  .included-list{display:flex;flex-wrap:wrap;gap:18px 30px;}
+  .included-list span{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--mmf-black);}
+
+  /* FAQ */
+  .faq{max-width:800px;margin:0 auto;}
+  .faq-item{border-top:1px solid var(--mmf-gray-100);padding:22px 0;}
+  .faq-item:last-child{border-bottom:1px solid var(--mmf-gray-100);}
+  .faq-item h3{font-size:17px;margin-bottom:8px;}
+  .faq-item p{margin:0;font-size:14.5px;}
+
+  /* Final CTA */
+  .cta-final{
+    background:var(--mmf-orange);
+    border-radius:var(--radius);
+    padding:52px 40px;
+    text-align:center;
+    margin:0 24px;
+  }
+  .cta-final h2{font-size:30px;margin-bottom:10px;}
+  .cta-final p{color:rgba(10,10,10,.72);max-width:520px;margin:0 auto 26px;}
+  .cta-final .hero-actions{justify-content:center;}
+
+  footer.site-footer{background:var(--mmf-black);color:rgba(255,255,255,.7);padding:56px 0 28px;margin-top:64px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1);}
+  .footer-grid h4{color:var(--mmf-white);font-size:14px;margin-bottom:14px;}
+  .footer-grid ul{list-style:none;margin:0;padding:0;}
+  .footer-grid li{margin-bottom:9px;font-size:13.5px;}
+  .footer-grid a:hover{color:var(--mmf-orange);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12.5px;}
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;}}
+
+  .sr-icon{color:var(--mmf-orange);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="https://mediamadefresh.com/">
+      <img src="https://mediamadefresh.com/wp-content/uploads/2019/06/mmf-logo-e1561042015164.png.webp" alt="Media Made Fresh logo">
+    </a>
+    <nav class="primary-nav">
+      <a href="https://mediamadefresh.com/">Home</a>
+      <a href="https://mediamadefresh.com/our-services/" class="current">Services</a>
+      <a href="https://mediamadefresh.com/seminars-coaching/">Seminars &amp; Coaching</a>
+      <a href="https://mediamadefresh.com/articles/">Articles</a>
+      <a href="https://mediamadefresh.com/about/">About</a>
+      <a href="https://mediamadefresh.com/contact/">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="phone-pill" href="tel:+19045957072">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (904) 595-7072
+      </a>
+      <a class="btn" href="#pricing">Get Hosting</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap breadcrumb">
+  <a href="https://mediamadefresh.com/">Home</a> &nbsp;/&nbsp;
+  <a href="https://mediamadefresh.com/our-services/">Services</a> &nbsp;/&nbsp;
+  <span>Web Hosting</span>
+</div>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Managed Web Hosting</span>
+      <h1>Hosting that's actually managed &mdash; by people, not a ticket queue.</h1>
+      <p class="lead">Your site stays online, fast, and backed by a real human who picks up the phone. No support tickets, no chatbots, no waiting to find out if anyone's looking at your issue.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#pricing">See Hosting Plans</a>
+        <a class="btn btn-outline" href="tel:+19045957072">Call (904) 595-7072</a>
+      </div>
+      <p class="hero-note">Plans start at $35/month &middot; Email hosting included on every plan</p>
+    </div>
+    <div class="hero-panel">
+      <h3>What every plan includes</h3>
+      <div class="hero-stat">
+        <div class="num">24/7</div>
+        <p class="label">Server &amp; uptime monitoring, 365 days a year &mdash; someone's always watching your site.</p>
+      </div>
+      <div class="hero-stat">
+        <div class="num">2 hrs</div>
+        <p class="label">Guaranteed response time from your account manager. No ticket queue.</p>
+      </div>
+      <div class="hero-stat">
+        <div class="num">1:1</div>
+        <p class="label">A direct phone number to a dedicated account manager who knows your account.</p>
+      </div>
+      <div class="hero-stat">
+        <div class="num">100%</div>
+        <p class="label">Renewable-energy powered hosting, built on Google Cloud infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why It's Different</span>
+      <h2>Hosting built around a real relationship, not a help desk</h2>
+      <p>Most hosting plans hand you a login and a support ticket form. Ours comes with a person.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>24/7/365 Monitoring</h3>
+        <p>Uptime, performance, and security are watched around the clock, every day of the year &mdash; including holidays.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>A Direct Line to Your Account Manager</h3>
+        <p>Every account gets a dedicated account manager and their direct phone number &mdash; the same person, every time you call.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>2-Hour Response, Guaranteed</h3>
+        <p>No support queue, no "your ticket is in line." If something's wrong, you get a real response within two hours.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Built on Google Cloud</h3>
+        <p>Enterprise-grade infrastructure with the speed, security, and scalability Google Cloud is known for.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M12 22a9 9 0 1 0-9-9c0 2.5 1 4.5 3 6"/><path d="M12 12v4"/></svg>
+        </div>
+        <h3>100% Renewable Energy</h3>
+        <p>Your site runs on hosting powered entirely by renewable energy &mdash; fast performance with a lighter footprint.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </div>
+        <h3>Email Hosting Included</h3>
+        <p>Professional email at your own domain comes standard on every plan &mdash; no separate add-on required.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:#f28107;">The Infrastructure</span>
+      <h2>Enterprise power. A clean conscience.</h2>
+      <p>We build every hosting plan on Google Cloud, so you get the same infrastructure trusted by some of the largest sites on the internet &mdash; with performance, security, and uptime to match. It's also matched 100% by renewable energy, so scaling your site up doesn't mean scaling up your impact.</p>
+      <div class="band-badges">
+        <span class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Google Cloud infrastructure
+        </span>
+        <span class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M12 22a9 9 0 1 0-9-9c0 2.5 1 4.5 3 6"/></svg>
+          100% renewable energy
+        </span>
+        <span class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
+          Enterprise-grade security
+        </span>
+      </div>
+    </div>
+    <div class="band-visual">
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Automatic scaling for traffic spikes</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Daily automated backups</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free SSL on every domain</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Global CDN for faster load times</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Continuous 24/7/365 monitoring</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Plans &amp; Pricing</span>
+      <h2>Hosting plans that scale with you</h2>
+      <p>Every plan includes 24/7/365 monitoring, a direct account manager phone line, a 2-hour response guarantee, email hosting, and 100% renewable-energy hosting on Google Cloud.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="plan">
+        <h3>Starter</h3>
+        <p class="plan-sub">For a single site that just needs to run right.</p>
+        <div class="price"><span class="amount">$35</span><span class="period">/ month</span></div>
+        <p class="price-note">Billed monthly &middot; annual pricing available</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 website hosted</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 5 business email mailboxes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 25 GB SSD storage</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free SSL certificate</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Daily automated backups</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7/365 monitoring</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Direct account manager line, 2-hr response</li>
+        </ul>
+        <a class="btn btn-outline" href="tel:+19045957072">Get Started</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-badge">Most Popular</span>
+        <h3>Business</h3>
+        <p class="plan-sub">For growing sites with more traffic and more to protect.</p>
+        <div class="price"><span class="amount">$75</span><span class="period">/ month</span></div>
+        <p class="price-note">Billed monthly &middot; annual pricing available</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Up to 3 websites hosted</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 25 business email mailboxes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100 GB SSD storage</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free SSL + global CDN</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Daily backups + 1-click restore</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Staging environment for testing changes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7/365 monitoring</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Direct account manager line, 2-hr response</li>
+        </ul>
+        <a class="btn" href="tel:+19045957072">Get Started</a>
+      </div>
+
+      <div class="plan">
+        <h3>Pro</h3>
+        <p class="plan-sub">For high-traffic sites and clients who need it rock-solid.</p>
+        <div class="price"><span class="amount">$150</span><span class="period">/ month</span></div>
+        <p class="price-note">Billed monthly &middot; annual pricing available</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited websites hosted</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited business email mailboxes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 500 GB SSD storage</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated resources &amp; auto-scaling</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hourly backups + 1-click restore</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Advanced firewall &amp; security hardening</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7/365 priority monitoring</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Direct account manager line, 2-hr response</li>
+        </ul>
+        <a class="btn btn-outline" href="tel:+19045957072">Get Started</a>
+      </div>
+
+    </div>
+
+    <div class="included-strip">
+      <span class="included-title">Included on every plan, no exceptions:</span>
+      <div class="included-list">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7/365 monitoring</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Direct account manager phone line</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 2-hour response, no ticket queue</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Email hosting</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f28107" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% renewable energy on Google Cloud</span>
+      </div>
+    </div>
+
+    <p class="pricing-footnote">Need something custom &mdash; more storage, more mailboxes, or a multi-site agency plan? Call (904) 595-7072 and we'll build a plan around what you actually need.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--mmf-gray-50);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Hosting FAQ</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>What does "no waiting in a queue" actually mean?</h3>
+        <p>When you have an issue, you call your account manager's direct number &mdash; not a general support line, not a ticket form. You get a real person who already knows your account, with a guaranteed response inside 2 hours.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is email hosting really included, or is it an add-on?</h3>
+        <p>It's included on every plan, at no extra cost. You get professional email addresses at your own domain, with mailbox limits that scale up by plan.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What does 100% renewable energy hosting mean?</h3>
+        <p>Your site is hosted on Google Cloud infrastructure that is matched 100% by renewable energy, so you get enterprise performance without an added environmental cost.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I move my existing site to Media Made Fresh hosting?</h3>
+        <p>Yes. Your account manager will walk you through migration, and in most cases we can move your site over with no downtime.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I upgrade or downgrade plans later?</h3>
+        <p>Absolutely &mdash; call your account manager any time and they'll move you to the plan that fits, prorated for the month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-final">
+    <h2>Ready for hosting that answers the phone?</h2>
+    <p>Get a dedicated account manager, 24/7/365 monitoring, and hosting built on 100% renewable-energy Google Cloud infrastructure &mdash; starting at $35/month.</p>
+    <div class="hero-actions">
+      <a class="btn" style="background:#0a0a0a;border-color:#0a0a0a;color:#fff;" href="tel:+19045957072">Call (904) 595-7072</a>
+      <a class="btn btn-white" href="#pricing">Compare Plans</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="https://mediamadefresh.com/wp-content/uploads/2019/06/mmf-logo-e1561042015164.png.webp" alt="Media Made Fresh logo" style="height:38px;margin-bottom:14px;filter:brightness(0) invert(1);">
+        <p style="color:rgba(255,255,255,.6);font-size:13.5px;max-width:260px;">Full-service marketing, web development, and hosting based in Jacksonville, FL.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://mediamadefresh.com/our-services/website-development/">Web Development</a></li>
+          <li><a href="#pricing">Web Hosting</a></li>
+          <li><a href="https://mediamadefresh.com/our-services/digital-marketing/">Digital Marketing</a></li>
+          <li><a href="https://mediamadefresh.com/our-services/branding-logo-design/">Branding &amp; Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://mediamadefresh.com/about/">About</a></li>
+          <li><a href="https://mediamadefresh.com/articles/">Articles</a></li>
+          <li><a href="https://mediamadefresh.com/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:+19045957072">(904) 595-7072</a></li>
+          <li><a href="https://mediamadefresh.com/contact/">Jacksonville, FL</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Media Made Fresh. All rights reserved.</span>
+      <span>Hosting Services</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
